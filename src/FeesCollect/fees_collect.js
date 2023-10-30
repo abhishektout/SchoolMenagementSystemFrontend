@@ -1,4 +1,6 @@
+import axios from "axios";
 import { useState } from "react"
+import Navbaar from "../Navbar/navbar";
 
 export default function FeesCOllection() {
     const [studentId, setStudentId] = useState("");
@@ -14,24 +16,30 @@ export default function FeesCOllection() {
         if (!feeAmount) {
             return false;
         }
+        else{
         const feeAmountPattern = /^\d+(\.\d{1,2})?$/;
         return feeAmount.match(feeAmountPattern) ? true : false;
+        }
     }
     const validateTransactionHistory = () => {
         if (transactionId)
             return true;
         return false;
     }
-    const submitButton = () => {
-        if (validateStudentId() && validateFeeAmount && validateTransactionHistory){
-            
-            alert("all done")
-
+    const submitButton = async () => {
+        if (validateStudentId() && validateFeeAmount && validateTransactionHistory) {
+            try {
+                const response = await axios.post("http://localhost:3000/student/fees", { stdId: studentId, fee: feeAmount, transactionId: transactionId, paymentMode: "online" })
+                alert("all done")
+            } catch (err) {
+                alert("error")
+            }
         }
         else
             alert("something wrong")
     }
     return <>
+        <Navbaar />
         <div>
             <div>
                 <h1 className="text-center">Throught Technology</h1>

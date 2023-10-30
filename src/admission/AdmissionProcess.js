@@ -1,10 +1,11 @@
+import Navbaar from '../Navbar/navbar'
 import './Style.css'
 function AdmissionProcess(){
     const handleSubmit=()=>{
         alert("function heat")
     }
     return <>
-      
+      <Navbaar/>
         <form onSubmit={handleSubmit}>
 
             <div className="outDiv">

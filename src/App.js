@@ -2,8 +2,8 @@ import './App.css';
 // import Admission from './admission/admission';
 import AdmissionProcess from './admission/AdmissionProcess';
 import FeesCOllection from './FeesCollect/fees_collect';
-import Home from './Home/home';
 import { Route, Router, Routes } from 'react-router-dom';
+import Home from './Home/home';
 
 
 function App() {
