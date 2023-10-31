@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './Style.css'
 import axios from 'axios';
 import api from '../WebApi/api';
@@ -314,5 +313,4 @@ function AdmissionProcess() {
     </>
 
 }
-
 export default AdmissionProcess;
