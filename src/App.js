@@ -1,17 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
 // import Admission from './admission/admission';
 import AdmissionProcess from './admission/AdmissionProcess';
-import { Attendance } from './attendance/attendance';
-import { Admin } from './admin/admin';
+import FeesCOllection from './FeesCollect/fees_collect';
+import { Route, Router, Routes } from 'react-router-dom';
+import Home from './Home/home';
 
 
 function App() {
-  return<>
-  {/* <AdmissionProcess/> */}
-  {/* <Attendance/> */}
-  <Admin/>
-  </>
+  return (
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/addmission' element={<AdmissionProcess/>}/>
+      <Route path='/fees' element={<FeesCOllection/>}/>
+      <Route />
+    </Routes>
+  )
 }
-
 export default App;
